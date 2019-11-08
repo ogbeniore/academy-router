@@ -1,12 +1,27 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <Navbar />
+    <div class="row d-flex">
+      <Sidebar />
+      <router-view/>
     </div>
-    <router-view/>
+    <footer>
+      <p>copyright &copy; 2019</p>
+    </footer>
   </div>
 </template>
+
+<script>
+import Navbar from '@/components/Navbar.vue'
+import Sidebar from '@/components/Sidebar.vue'
+export default {
+  name: 'App',
+  components: {
+    Navbar,
+    Sidebar
+  }
+}
+</script>
 
 <style>
 #app {
@@ -28,5 +43,11 @@
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+.red-border {
+  border:  2px solid red;
+}
+.green-border {
+  border:  2px solid green;
 }
 </style>
